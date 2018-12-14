@@ -73,6 +73,10 @@ describe('Director tests', () => {
 
 					res.should.have.status(200);
 					res.body.should.be.a('array');
+					res.body[0].should.have.property('name');
+          res.body[0].should.have.property('surname');
+          res.body[0].should.have.property('bio');
+          res.body[0].should.have.property('_id').eql(directorId);
 					done();
 				});
 		});
